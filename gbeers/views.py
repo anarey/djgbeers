@@ -16,4 +16,3 @@ def gbeers(request):
                              'Cambios guardados correctamente')
     return render_to_response('gbeers.html', {'form': form},
                               context_instance=RequestContext(request))
-

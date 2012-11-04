@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.localflavor.es.es_provinces import PROVINCE_CHOICES
 
 # Create your models here.
 ESTADO = (
@@ -44,7 +45,7 @@ class Ponencia(models.Model):
 
 class Gbeers(models.Model):
     edicion = models.CharField(verbose_name="Edicion", max_length=200, null=False, blank=False)
-    provincia = models.CharField(verbose_name="Provincia", max_length=20)
+    provincia = models.CharField(verbose_name="Provincia", max_length=20, choices=PROVINCE_CHOICES)
     ciudad = models.CharField(verbose_name="Ciudad", max_length=20)  # TODO Buscar modulo con las ciudades
     pais = models.CharField(verbose_name="Pais", max_length=20) ## TODO Enlazar con modulo
     ### Relacion 1 a muchso con usuarios.
