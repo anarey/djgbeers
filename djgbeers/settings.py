@@ -1,4 +1,7 @@
-# Django settings for djgbeers project.
+# -*- encoding: utf-8 -*-
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../")
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -84,7 +87,7 @@ SECRET_KEY = '6_53a8zh&amp;&amp;^jxk3519-v28rl&amp;ltb@sjn8szb)r)kjs)@xz_5q_'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,6 +109,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -116,9 +120,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'gbeers'
 )
 
 # A sample logging configuration. The only tangible logging
